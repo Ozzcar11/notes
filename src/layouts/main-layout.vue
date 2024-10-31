@@ -5,7 +5,7 @@ defineOptions({
 </script>
 
 <template>
-  <div class="empty">
+  <div class="auth">
     main
     <slot />
   </div>

@@ -13,7 +13,8 @@ const modelValue = defineModel<string | number | null>("modelValue", {
 const ns = useBEMNamespace("ui-input");
 
 const input = ref<HTMLInputElement>();
-const typeValue = ref("text");
+const typeValue = ref(props.type);
+const isFocused = ref(false);
 
 const inputClasses = computed(() => [
   ns.block(),
@@ -21,7 +22,7 @@ const inputClasses = computed(() => [
   ns.is("disabled", props.disabled),
 ]);
 
-const showButtons = computed(() => props.type === "password");
+const showButtons = computed(() => !!modelValue.value && isFocused.value);
 
 function focusInput() {
   input.value?.focus();
@@ -46,10 +47,14 @@ function showPassword() {
     <div tabindex="-1" class="ui-input__wrapper" @click="focusInput">
       <input
         ref="input"
+        v-model="modelValue"
         class="ui-input__input"
+        @focus="isFocused = true"
+        @blur="isFocused = false"
         :disabled="disabled"
         :type="typeValue"
         :placeholder="placeholder"
+        :autocomplete="typeValue === 'password' ? 'current-password' : 'off'"
       />
       <Transition name="slide-fade">
         <div v-if="showButtons" class="ui-input__btn">
@@ -62,11 +67,12 @@ function showPassword() {
             "
             class="pointer"
             @click="showPassword"
+            @mousedown.prevent
           />
           <ui-icon
             v-if="clearable"
             icon="mdi-close"
-            class="ui-input__btn-close"
+            class="ui-input__btn-close pointer"
             @click="clear"
           />
         </div>
@@ -188,6 +194,10 @@ function showPassword() {
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       -webkit-appearance: none;
+    }
+
+    &::-ms-reveal {
+      display: none;
     }
   }
 }

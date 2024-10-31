@@ -67,7 +67,11 @@ function buttonClickHandler(event: Event) {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none;
   gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
 
   &__postfix-icon {
     width: 24px;
@@ -81,54 +85,14 @@ function buttonClickHandler(event: Event) {
 
   &--primary {
     color: $text-primary-inverted;
-    background-color: $surface-accent;
+    background-image: $surface-accent;
 
     &:hover {
-      background-color: $surface-accent-dark-s;
+      background-image: $surface-accent-dark-s;
     }
 
     &:active {
       background-color: var(--surface-accent-dark-m);
-    }
-  }
-
-  &--secondary {
-    color: var(--surface-accent);
-    background-color: var(--surface-gray-light-s);
-
-    &:hover {
-      background-color: var(--surface-accent-light-m);
-    }
-
-    &:active {
-      background-color: var(--surface-accent-light-xl);
-    }
-  }
-
-  &--light {
-    color: var(--text-primary);
-    background-color: var(--surface-light);
-    box-shadow: 0 4px 16px 0 rgba(5, 25, 69, 0.04);
-
-    &:hover {
-      background-color: var(--surface-gray-light-m);
-    }
-
-    &:active {
-      background-color: var(--surface-gray);
-    }
-  }
-
-  &--error {
-    color: var(--service-error, #e3000f);
-    background: var(--service-error-light, #f6e9ed);
-
-    &:hover {
-      background: var(--service-error-error-light-m, #fddae5);
-    }
-
-    &:active {
-      background: var(--service-error-error-light-l, #fcc4d6);
     }
   }
 
@@ -147,11 +111,6 @@ function buttonClickHandler(event: Event) {
     &.ui-button--empty {
       padding: 8px;
     }
-  }
-
-  &--blue {
-    color: var(--text-accent);
-    box-shadow: none;
   }
 
   &:focus {

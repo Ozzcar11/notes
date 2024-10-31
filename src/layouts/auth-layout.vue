@@ -5,15 +5,15 @@ defineOptions({
 </script>
 
 <template>
-  <div class="empty">
-    <div class="empty__container">
+  <div class="auth">
+    <div class="auth__container">
       <slot />
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.empty {
+.auth {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,8 +27,7 @@ defineOptions({
     align-items: center;
     width: 100%;
     max-width: 400px;
-    height: 400px;
-    padding: 15px;
+    padding: 15px 40px;
     background-color: $surface-white;
     border-radius: 15px;
   }

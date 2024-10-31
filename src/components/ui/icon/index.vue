@@ -21,7 +21,7 @@ const projectIcon = computed(() => {
 </script>
 
 <template>
-  <div class="esr-icon">
+  <div class="ui-icon">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
@@ -37,7 +37,7 @@ const projectIcon = computed(() => {
 <style lang="scss">
 .ui-icon {
   display: inline-block;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
 }
 </style>
