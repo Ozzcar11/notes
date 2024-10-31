@@ -1,14 +1,13 @@
 <script lang="ts" setup>
 defineOptions({
-  name: "EmptyLayout",
+  name: "MainLayout",
 });
 </script>
 
 <template>
   <div class="empty">
-    <div class="empty__container">
-      <slot />
-    </div>
+    main
+    <slot />
   </div>
 </template>
 
