@@ -1,18 +1,27 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../pages/HomeView.vue'
+import {
+  type RouteRecordRaw,
+  createRouter,
+  createWebHistory,
+} from "vue-router";
+
+import { allRoutes } from "./routes";
+
+export const routes: RouteRecordRaw[] = [
+  ...allRoutes,
+  {
+    path: "/404",
+    name: "404",
+    meta: {
+      title: "Страница не найдена",
+    },
+    component: () => import("@/pages/404.vue"),
+  },
+  { path: "/:pathMatch(.*)*", redirect: "/404" },
+];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView,
-      meta: {
-        layout: "empty",
-      }
-    },
-  ]
-})
+  history: createWebHistory(),
+  routes,
+});
 
-export default router
+export { router };
