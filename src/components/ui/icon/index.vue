@@ -37,7 +37,7 @@ const projectIcon = computed(() => {
 <style lang="scss">
 .ui-icon {
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 32px;
+  height: 32px;
 }
 </style>

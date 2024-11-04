@@ -1,12 +1,14 @@
 <script lang="ts" setup>
+import AppHeader from "@/components/app/app-header.vue";
+
 defineOptions({
   name: "MainLayout",
 });
 </script>
 
 <template>
-  <div class="auth">
-    main
+  <div>
+    <app-header />
     <slot />
   </div>
 </template>

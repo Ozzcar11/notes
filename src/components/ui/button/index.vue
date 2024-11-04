@@ -20,9 +20,7 @@ const router = useRouter();
 
 const buttonClasses = computed(() => [
   ns.block(),
-  ns.modifier(props.color),
-  ns.modifier(props.size),
-  !hasSlot.value ? ns.modifier("empty") : ns.modifier("not-empty"),
+  ns.is("disabled", props.disabled),
 ]);
 
 const hasSlot = computed(() => {
@@ -59,19 +57,28 @@ function buttonClickHandler(event: Event) {
 
 <style lang="scss">
 .ui-button {
+  color: $white;
+  background-color: $green-light;
+  padding: 12px 24px;
   width: auto;
   max-width: 100%;
-  border-radius: 5px;
-  font-weight: 500;
-  text-align: center;
+  border-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: none;
   gap: 12px;
-  font-size: 16px;
-  font-weight: 600;
   cursor: pointer;
+
+  @include text-base;
+
+  &:hover {
+    background-color: $green-middle;
+  }
+
+  &:active {
+    background-color: $green-dark;
+  }
 
   &__postfix-icon {
     width: 24px;
@@ -83,44 +90,18 @@ function buttonClickHandler(event: Event) {
     height: 24px;
   }
 
-  &--primary {
-    color: $text-primary-inverted;
-    background-image: $surface-accent;
-
-    &:hover {
-      background-image: $surface-accent-dark-s;
-    }
-
-    &:active {
-      background-color: var(--surface-accent-dark-m);
-    }
-  }
-
-  &--large {
-    padding: 12px 20px;
-    height: 48px;
-
-    &.ui-button--empty {
-      padding: 12px;
-    }
-  }
-
-  &--medium {
-    padding: 8px 20px;
-
-    &.ui-button--empty {
-      padding: 8px;
-    }
-  }
-
   &:focus {
     border-color: none;
   }
 
   &:disabled,
   &[disabled] {
-    color: var(--text-secondary);
-    background-color: var(--surface-gray-light-m);
+    color: $white;
+    background-color: $gray;
+  }
+
+  &.is-disabled {
+    pointer-events: none;
   }
 }
 </style>

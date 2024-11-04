@@ -18,7 +18,6 @@ const isFocused = ref(false);
 
 const inputClasses = computed(() => [
   ns.block(),
-  ns.modifier(props.size),
   ns.is("disabled", props.disabled),
 ]);
 
@@ -26,12 +25,6 @@ const showButtons = computed(() => !!modelValue.value && isFocused.value);
 
 function focusInput() {
   input.value?.focus();
-}
-
-function clear() {
-  if (props.disabled) return;
-
-  modelValue.value = "";
 }
 
 function showPassword() {
@@ -69,12 +62,6 @@ function showPassword() {
             @click="showPassword"
             @mousedown.prevent
           />
-          <ui-icon
-            v-if="clearable"
-            icon="mdi-close"
-            class="ui-input__btn-close pointer"
-            @click="clear"
-          />
         </div>
       </Transition>
     </div>
@@ -96,64 +83,42 @@ function showPassword() {
     position: relative;
     display: flex;
     width: 100%;
-    color: $text-primary;
+    color: $dark;
     line-height: 24px;
-    background-color: $surface-white;
-    border: 1.5px solid $surface-gray;
+    background-color: $white;
     border-radius: 5px;
     outline: none;
     overflow: hidden;
-
-    &:hover {
-      color: $text-primary;
-      border: 1.5px solid $surface-black;
-    }
+    padding: 22.5px 28px;
 
     &:focus-within {
-      border: 1.5px solid $surface-black;
-    }
-
-    .ui-input--medium & {
-      padding: 7px 12px;
-    }
-
-    .ui-input--large & {
-      padding: 11px 16px;
+      border: 2px solid $green-light;
     }
 
     .ui-input--password & {
       padding-right: 36px;
     }
 
-    .ui-input--clearable & {
-      padding-right: 36px;
-    }
-
     .ui-input--error & {
       border: 1.5px solid $service-error;
-    }
-
-    .ui-input--clearable.ui-input--password {
-      padding-right: 68px;
     }
   }
 
   &__input {
     &::placeholder {
-      color: $surface-gray;
+      color: $gray;
     }
   }
 
   &__label {
-    color: $text-secondary;
-    font-size: 0.875rem;
+    color: $gray;
     margin-bottom: 8px;
 
     @include text-sm;
   }
 
   &__hint {
-    color: $text-secondary;
+    color: $gray;
     font-size: 0.875rem;
     margin-top: 8px;
 
@@ -170,12 +135,12 @@ function showPassword() {
     height: 22px;
 
     svg {
-      fill: $surface-gray;
+      fill: $green-light;
     }
   }
 
   &__btn {
-    color: $text-secondary;
+    color: $green-light;
     position: absolute;
     right: 10px;
     display: inline-flex;

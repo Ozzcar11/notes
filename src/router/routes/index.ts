@@ -1,5 +1,4 @@
 import { type RouteRecordRaw } from "vue-router";
-import { authRoutes } from "./auth";
 
 const MainRoute: RouteRecordRaw = {
   path: "/",
@@ -7,10 +6,9 @@ const MainRoute: RouteRecordRaw = {
   meta: {
     layout: "main",
   },
-  component: () => import("@/pages/notes/notes-page.vue"),
+  component: () => import("@/pages/main-page.vue"),
 };
 
 export const allRoutes: RouteRecordRaw[] = [
   MainRoute,
-  ...authRoutes,
 ];

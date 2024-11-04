@@ -1,44 +1,58 @@
 @mixin text-h1() {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 104px;
+  line-height: 6.5rem;
+}
+
+@mixin text-h1-mobile() {
+  font-size: 3.75rem;
+  line-height: 4rem;
 }
 
 @mixin text-h2() {
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 3rem;
+  line-height: 4.5rem;
+}
+
+@mixin text-h2-mobile() {
+  font-size: 2rem;
+  line-height: 2.25rem;
 }
 
 @mixin text-h3() {
-  font-size: 1.25rem;
-  font-weight: 500;
-}
-
-@mixin text-h4() {
   font-size: 2rem;
-  font-weight: 500;
+  line-height: 3rem;
 }
 
-@mixin text-h5() {
+@mixin text-h3-mobile() {
   font-size: 1.5rem;
-  font-weight: 500;
+  line-height: 1.625rem;
+}
+@mixin text-h4() {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
-@mixin text-h6() {
+@mixin text-h4-mobile() {
   font-size: 1.25rem;
-  font-weight: 500;
-}
-
-@mixin text-xs() {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
-@mixin text-sm() {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  line-height: 1.625rem;
 }
 
 @mixin text-base() {
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+@mixin text-base-mobile() {
   font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@mixin text-sm() {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+@mixin text-sm-mobile() {
+  font-size: 0.875rem;
   line-height: 1.5rem;
 }

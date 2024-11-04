@@ -19,7 +19,7 @@ defineOptions({
   justify-content: center;
   width: 100vw;
   min-height: 100vh;
-  background-color: $surface-black;
+  background-color: $dark;
 
   &__container {
     display: flex;
@@ -28,7 +28,7 @@ defineOptions({
     width: 100%;
     max-width: 400px;
     padding: 15px 40px;
-    background-color: $surface-white;
+    background-color: $white;
     border-radius: 15px;
   }
 }

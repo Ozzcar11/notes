@@ -1,0 +1,35 @@
+/**
+ * * Кастомный миксин для любого максимального значения ширины экрана
+*/
+@mixin screen-custom-max($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+/**
+ * * Кастомный миксин для любого минимального значения ширины экрана
+*/
+@mixin screen-custom-min($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin screen-desktop-xs {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin screen-tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin screen-mobile {
+  @media (max-width: 359px) {
+    @content;
+  }
+}

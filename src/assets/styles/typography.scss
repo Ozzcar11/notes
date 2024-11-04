@@ -1,0 +1,13 @@
+@use "./global/sizings.scss" as *;
+@use "./global/colors.scss" as *;
+
+h1 {
+  @include text-h1;
+  color: $white;
+}
+
+h3 {
+  @include text-h3;
+  color: $gray;
+  font-weight: 400;
+}

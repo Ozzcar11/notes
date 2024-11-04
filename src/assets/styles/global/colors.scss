@@ -1,36 +1,10 @@
-// Main colors
-$surface-black: #15191f;
-$surface-white: #fff;
-$surface-gray: #bfbfbf;
-$surface-accent: linear-gradient(
-  120deg,
-  hsl(355deg 85% 76%) 0%,
-  hsl(354deg 85% 75%) 18%,
-  hsl(353deg 84% 73%) 26%,
-  hsl(352deg 83% 72%) 33%,
-  hsl(351deg 83% 70%) 39%,
-  hsl(350deg 82% 68%) 44%,
-  hsl(349deg 81% 67%) 50%,
-  hsl(348deg 81% 65%) 56%,
-  hsl(347deg 80% 63%) 61%,
-  hsl(345deg 79% 61%) 67%,
-  hsl(344deg 79% 58%) 74%,
-  hsl(342deg 78% 56%) 82%,
-  hsl(340deg 78% 53%) 100%
-);
-$surface-accent-dark-s: linear-gradient(
-  120deg,
-  hsl(355deg 85% 69%) 0%,
-  hsl(353deg 75% 64%) 29%,
-  hsl(350deg 67% 59%) 43%,
-  hsl(347deg 61% 53%) 57%,
-  hsl(344deg 62% 48%) 71%,
-  hsl(340deg 76% 41%) 100%
-);
-
-// Text colors
-$text-primary: #000;
-$text-primary-inverted: #fff;
-$text-secondary: #8e8e8e;
-// Service colors
-$service-error: #ff0000;
+$dark: #0a1f38ff;
+$dark-middle: #1b2f46ff;
+$dark-light: #2f4056ff;
+$gray: #9da5afff;
+$green-dark: #819400ff;
+$green-middle: #97ab0dff;
+$green: #a5bb0cff;
+$green-light: #b1c909ff;
+$white: #ffffffff;
+$service-error: #ff7461;
