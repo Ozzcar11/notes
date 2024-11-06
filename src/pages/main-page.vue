@@ -33,6 +33,11 @@
     @include screen-desktop-xs {
       flex-direction: column;
       align-items: center;
+      padding: 0px 40px;
+    }
+
+    @include screen-tablet {
+      padding: 0px 20px;
     }
   }
 
@@ -76,7 +81,13 @@
 
     @include screen-desktop-xs {
       text-align: center;
-      margin-bottom: 20px;
+      margin: 40px 0 20px;
+    }
+
+    @include screen-tablet {
+      @include text-h1-mobile;
+      max-width: 320px;
+      margin: 20px 0 20px;
     }
   }
 
@@ -85,10 +96,12 @@
 
     @include screen-desktop-xs {
       text-align: center;
+      max-width: 600px;
     }
 
     @include screen-tablet {
-      max-width: 600px;
+      @include text-h3-mobile;
+      max-width: 320px;
     }
   }
 }

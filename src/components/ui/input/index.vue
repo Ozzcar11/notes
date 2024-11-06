@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, defineModel, ref } from "vue";
+import { computed, ref } from "vue";
 import { useBEMNamespace } from "@/composables/useBEMNamespace";
 import { type InputProps, InputPropsDefaults } from "./types";
 import { UiIcon } from "@/components/ui/icon";

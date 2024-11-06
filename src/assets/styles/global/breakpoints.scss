@@ -17,19 +17,13 @@
 }
 
 @mixin screen-desktop-xs {
-  @media (max-width: 1366px) {
+  @media (max-width: 1365px) {
     @content;
   }
 }
 
 @mixin screen-tablet {
   @media (max-width: 768px) {
-    @content;
-  }
-}
-
-@mixin screen-mobile {
-  @media (max-width: 359px) {
     @content;
   }
 }

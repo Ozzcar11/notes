@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import { UiButton } from "@/components/ui";
+import { mainRoute } from "@/router/routes";
 </script>
 
 <template>
   <header class="header">
     <div class="header__container container">
-      <router-link :to="{ name: 'main' }">
-        <img src="/icons/logo.svg" />
+      <router-link :to="mainRoute">
+        <img src="/icons/logo.svg" alt="Логотип" class="header__logo" />
       </router-link>
       <ui-button prefix-icon="mdi-location-enter">Вход</ui-button>
     </div>
@@ -21,8 +22,12 @@ import { UiButton } from "@/components/ui";
   background-color: $dark;
   padding: 0px 80px;
 
-  @include screen-tablet {
+  @include screen-desktop-xs {
     padding: 0px 40px;
+  }
+
+  @include screen-tablet {
+    padding: 0px 20px;
   }
 
   &__container {
@@ -34,6 +39,13 @@ import { UiButton } from "@/components/ui";
 
     @include screen-desktop-xs {
       padding: 20px 0px;
+    }
+  }
+
+  &__logo {
+    @include screen-tablet {
+      max-width: 154px;
+      height: 36px;
     }
   }
 }

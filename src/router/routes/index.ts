@@ -1,6 +1,6 @@
 import { type RouteRecordRaw } from "vue-router";
 
-const MainRoute: RouteRecordRaw = {
+export const mainRoute: RouteRecordRaw = {
   path: "/",
   name: "main",
   meta: {
@@ -10,5 +10,5 @@ const MainRoute: RouteRecordRaw = {
 };
 
 export const allRoutes: RouteRecordRaw[] = [
-  MainRoute,
+  mainRoute,
 ];
